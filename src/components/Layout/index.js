@@ -1,27 +1,21 @@
-import { Link, NavLink } from 'react-router-dom'
 import './index.scss'
-import Logos from '../../assets/images/logo-s.png'
-import LogoSubtitle from '../../assets/images/logo_sub.png'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faHome } from '@fortawesome/free-solid-svg-icons'
+import Sidebar from '../Sidebar'
+import { Outlet } from 'react-router-dom';
+
 const Layout = () => {
     return (
-        <div className='nav-bar'>
-            <Link className='logo' to='/'>
-                <img src={Logos} alt="logo" />
-                <img className="sub-logo" src={LogoSubtitle} alt="slobodan" />
-            </Link>
-            <nav>
-                <NavLink exact="true" activeclassname="active" to="/">
-                    <FontAwesomeIcon icon={faHome} color="'#4d4d4e" />
-                </NavLink>
-                <NavLink exact="true" activeclassname="active" to="/">
-                    <FontAwesomeIcon icon={faHome} color="'#4d4d4e" />
-                </NavLink>
-                <NavLink exact="true" activeclassname="active" to="/">
-                    <FontAwesomeIcon icon={faHome} color="'#4d4d4e" />
-                </NavLink>
-            </nav>
+        <div className='App'>
+            <Sidebar />
+            <div className='page'>
+                <span className='tags top-tags'>&lt;body&gt;</span>
+                <Outlet />
+                <span className='tags bottom-tags'>
+                    &lt;/body&gt;
+                    <br />
+                    <span className='bottom-tag-html'>&lt;/html&gt;</span>
+                </span>
+
+            </div>
         </div>
     );
 }
