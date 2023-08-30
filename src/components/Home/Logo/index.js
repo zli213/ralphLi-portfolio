@@ -4,27 +4,33 @@ import { useEffect, useRef } from 'react';
 import DrawSVGPlugin from 'gsap-trial/DrawSVGPlugin';
 import gsap from 'gsap-trial';
 const Logo = () => {
-
     const bgRef = useRef();
     const outlineLogoRef = useRef();
     const solidLogoRef = useRef();
+
     useEffect(() => {
         gsap.registerPlugin(DrawSVGPlugin)
-
         gsap.timeline()
-            .to(bgRef.current, { duration: 1, opacity: 1 });
+            .to(bgRef.current, { duration: 1, opacity: 1, })
+            .from(outlineLogoRef.current, { drawSVG: 0, duration: 20, })
+        gsap.fromTo(solidLogoRef.current, { opacity: 0 }, { opacity: 1, duration: 4, delay: 4 })
     }, []);
     return (
         <div className='logo-container' ref={bgRef}>
-            <img reg={solidLogoRef} className='solid-logo' src={LogoS} alt='S' />
-            <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
-                width="559.000000pt" height="897.000000pt" viewBox="0 0 559.000000 897.000000"
-                preserveAspectRatio="xMidYMid meet">
-                <metadata>
-                    Created by potrace 1.16, written by Peter Selinger 2001-2019
-                </metadata>
-                <g transform="translate(0.000000,897.000000) scale(0.100000,-0.100000)"
-                    fill="#000000" stroke="none">
+            <img ref={solidLogoRef} className='solid-logo' src={LogoS} alt='S' />
+            <svg
+                version="1.0"
+                xmlns="http://www.w3.org/2000/svg"
+                width="559.000000pt"
+                height="897.000000pt"
+                viewBox="0 0 559.000000 897.000000"
+                preserveAspectRatio="xMidYMid meet"
+            >
+                <g
+                    className="svg-container"
+                    transform="translate(0.000000,897.000000) scale(0.100000,-0.100000)"
+                    fill="none"
+                >
                     <path
                         ref={outlineLogoRef}
                         d="M2930 8959 c-344 -16 -623 -85 -915 -228 -231 -114 -406 -241 -600
