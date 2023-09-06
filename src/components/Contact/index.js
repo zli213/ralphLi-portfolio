@@ -19,7 +19,7 @@ const Contact = () => {
     const sendEmail = (e) => {
         e.preventDefault();
         emailjs
-            .sendForm('service_zh4gdjg', 'template_s4w5c2z', refForm.current, 'DPqxR6EzUYM-mVVXx')
+            .sendForm('default_service', 'template_s4w5c2z', refForm.current, 'DPqxR6EzUYM-mVVXx')
             .then(
                 () => {
                     alert('Email sent successfully!');
