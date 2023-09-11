@@ -75,11 +75,14 @@ const Contact = () => {
                     <span >lzh8612@outlook.com</span>
                 </div>
                 <div className='map-wrap'>
-                    <MapContainer center={[44.96366, 19.61045]} zoom={13}>
-                        <TileLayer url='https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png' />
-                        <Marker position={[44.96366, 19.61045]} >
+                    <MapContainer center={[-36.8491281, 174.7713053]} zoom={13}>
+                        <TileLayer
+                            attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+                            url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+                        />
+                        <Marker position={[-36.8491281, 174.7713053]}>
                             <Popup>
-                                Ralph lives here, come over for a coffee :)
+                                Ralph lives here, come over for a coffee
                             </Popup>
                         </Marker>
                     </MapContainer>
