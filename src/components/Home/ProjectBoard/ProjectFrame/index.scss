@@ -1,15 +1,23 @@
 .project-frame {
   background-color: white;
   width: 50%;
-  height: 40%;
+  height: 100%;
   margin: 10px;
   border-radius: 0.5rem;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem;
   .btn-primary {
     width: 10rem;
     border-color: #ffd700;
+    border-radius: 0.5rem;
+  }
+  .snapShot,
+  iframe {
+    width: 100%;
+    height: 100%;
     border-radius: 0.5rem;
   }
 }

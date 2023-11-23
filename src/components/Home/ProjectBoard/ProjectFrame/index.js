@@ -1,20 +1,19 @@
 import React from 'react'
 import './index.scss'
 
-const ProjectFrame = ({ url, title, github_url, frameState }) => {
+const ProjectFrame = ({ url, title, github_url, frameState, imageSrc }) => {
   return (
     <div className="project-frame">
       {frameState ? (
         <iframe
-          src={url} // 使用传入的 url 作为 iframe 的 src
-          title={title} // 使用传入的 title 作为 iframe 的标题
+          src={url}
+          title={title}
           width="100%"
-          height="600px" // 根据需要调整高度
-          frameBorder="0"
+          height="600px"
           allowFullScreen
         ></iframe>
       ) : (
-        <img className="snapShot" src="" alt="" />
+        <img className="snapShot" src={imageSrc} alt="" />
       )}
       <button className="btn-primary">
         <a href={github_url}>Github Link</a>
